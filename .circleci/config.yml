@@ -24,7 +24,8 @@ jobs:
           name: test git
           command: |
             - touch something.txt
-            - git add . && git commit -m "test git"
+            - git add .
+            - git commit -m "test git"
             - git push
 
       # Download and cache dependencies
