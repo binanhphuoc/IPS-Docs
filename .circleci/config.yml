@@ -59,8 +59,8 @@ jobs:
             git config user.email "${gitEmail}"
             git config user.name "${gitUser}"
             git add .
-            git commit -m "test from circleci"
-            git push
+            git config user.name
+            git config user.email
 
       - store_artifacts:
           path: test-reports
