@@ -36,21 +36,20 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
+            - v1-dependencies-{{ checksum "environment.yml" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run:
           name: install dependencies
           command: |
-            conda env create --prefix ./envs
+            conda env create -f env.yml --prefix ./envs
             conda activate ./envs
-            conda install --file requirements.txt
 
       - save_cache:
           paths:
             - ./envs
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
+          key: v1-dependencies-{{ checksum "environment.yml" }}
 
       - run:
           name: activate env
