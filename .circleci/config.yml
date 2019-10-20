@@ -53,9 +53,9 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
-          name: activate env
+          name: activate env and run tests
           command:
-            conda activate ./envs
+            source ./envs/bin/activate
 
       - store_artifacts:
           path: test-reports
