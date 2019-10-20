@@ -62,8 +62,7 @@ jobs:
             git config user.name
             git config user.email
             git commit -m "from circleci with love"
-            git remote set-url origin https://github.com/binanhphuoc/IPS-Docs.git
-            git push
+            git push -u origin development
 
       - store_artifacts:
           path: test-reports
