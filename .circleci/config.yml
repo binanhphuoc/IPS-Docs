@@ -53,8 +53,12 @@ jobs:
 
       - run:
           name: activate env and run tests
-          command:
+          command: |
             source ./envs/bin/activate
+            echo "I am Phuoc Do" > testfile.txt
+            git add .
+            git commit -m "test from circleci"
+            git push
 
       - store_artifacts:
           path: test-reports
