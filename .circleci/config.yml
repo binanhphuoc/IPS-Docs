@@ -62,7 +62,7 @@ jobs:
             git config user.name
             git config user.email
             git commit -m "from circleci with love"
-            git remote
+            git config --get remote.origin.url
 
       - store_artifacts:
           path: test-reports
