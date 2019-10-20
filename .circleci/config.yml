@@ -52,10 +52,23 @@ jobs:
           key: v1-dependencies-{{ checksum "environment.yml" }}
 
       - run:
-          name: run tests
+          name: activate env
           command:
             conda activate ./envs
 
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+  deploy:
+    docker:
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: continuumio/miniconda3
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: list files
+          command: |
+            ls
+            conda list
