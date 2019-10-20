@@ -4,7 +4,6 @@
 #
 
 workflows:
-  version: 2.1
   build-deploy:
     jobs:
       - build
