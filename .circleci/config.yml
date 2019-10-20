@@ -56,6 +56,8 @@ jobs:
           command: |
             source ./envs/bin/activate
             echo "I am Phuoc Do" > testfile.txt
+            git config user.email "${gitEmail}"
+            git config user.name "${gitUser}"
             git add .
             git commit -m "test from circleci"
             git push
