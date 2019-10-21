@@ -54,20 +54,24 @@ jobs:
             - ./envs
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
-      - persist_to_workspace:
-          root: .
-          paths: 
-            - ./envs
-
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: 
+            - ./envs
 
   test:
     docker:
       - image: circleci/python:3.6.4
     working_directory: ~/repo
     steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/repo
+
       - run:
           name: Test Environment
           command: |
