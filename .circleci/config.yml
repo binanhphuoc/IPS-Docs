@@ -4,19 +4,22 @@
 #
 
 workflows:
-  build-deploy:
+  IPS-Documentation:
     jobs:
-      - build
+      - envs
+      - test:
+          requires:
+            - envs
       - deploy:
           requires:
-            - build
+            - test
           filters:
             branches:
-              only: staging
+              only: master
 
 version: 2.1
 jobs:
-  build:
+  envs:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
@@ -40,7 +43,7 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: |
             virtualenv envs
             source ./envs/bin/activate
@@ -51,22 +54,19 @@ jobs:
             - ./envs
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
-      - run:
-          name: activate env and run tests
-          command: |
-            source ./envs/bin/activate
-            echo "I am Phuoc Do" > testfile.txt
-            git config user.email "${gitEmail}"
-            git config user.name "${gitUser}"
-            git add .
-            git config user.name
-            git config user.email
-            git commit -m "from circleci with love"
-            git push -u origin --all
-
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+  test:
+    docker:
+      - image: circleci/python:3.6.4
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: Test Environment
+          command: |
+            ls
 
   deploy:
     docker:
@@ -76,7 +76,25 @@ jobs:
     working_directory: ~/repo
     steps:
       - run:
-          name: list files
+          name: Convert ipynb to Markdown
           command: |
             pwd
             pip list
+
+      - run:
+          name: Remove all ipynb files
+          command: |
+            source ./envs/bin/activate
+            git config user.name
+            git config user.email
+            git commit -m "convert ipynb"
+            git push -u origin --all
+
+      - run:
+          name: Push back to Github
+          command: |
+            source ./envs/bin/activate
+            git config user.name
+            git config user.email
+            git commit -m "convert ipynb"
+            git push -u origin --all
