@@ -66,6 +66,7 @@ jobs:
       - run:
           name: Test Environment
           command: |
+            pwd
             ls
 
   deploy:
