@@ -67,7 +67,8 @@ jobs:
           name: Test Environment
           command: |
             pwd
-            ls
+            source ./envs/bin/activate
+            pip freeze
 
   deploy:
     docker:
