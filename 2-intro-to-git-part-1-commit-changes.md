@@ -1,5 +1,4 @@
-## Article 2
-
+# Article 2
 # Introduction to Git - Part 1: Commit Changes
 
 Git is an essential tool for version control and collaboration in a code project. If you still have confusions, don't worry. We will dive into every aspect of this tool later.

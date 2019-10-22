@@ -1,5 +1,4 @@
-## Article 1
-
+# Article 1
 # Set Up a Python Development Environment
 
 From Section 1 to Section 3, we will briefly introduce you to a few necessary dev-tools for Python development. You can jump to [Installation in Section 4](#4) if you are not in the mood of reading.
