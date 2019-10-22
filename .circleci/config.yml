@@ -111,6 +111,7 @@ jobs:
             git config user.name "$gitUser"
             git config user.email "$gitEmail"
             git add .
-            git rm $(git ls-files --deleted)
-            git commit -m "convert ipynb to markdown"
-            git push -u origin --all
+            git ls-files --deleted
+            #git rm $(git ls-files --deleted)
+            #git commit -m "convert ipynb to markdown"
+            #git push -u origin --all
