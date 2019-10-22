@@ -102,7 +102,7 @@ jobs:
             source ~/tmp/envs/bin/activate
       - run:
           name: Merge master branch
-          command:
+          command: |
             git merge master
             git push -u origin -all
 
