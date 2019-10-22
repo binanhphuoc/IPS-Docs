@@ -86,26 +86,31 @@ jobs:
       - image: circleci/python:3.6.4
     working_directory: ~/repo
     steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/repo
+
+      - run:
+          name: Activate Environment
+          command: |
+            source ./envs/bin/activate
+
       - run:
           name: Convert ipynb to Markdown
           command: |
-            pwd
-            pip list
+            sh ./scripts/convert-ipynb-to-md.sh
 
       - run:
           name: Remove all ipynb files
           command: |
-            source ./envs/bin/activate
-            git config user.name
-            git config user.email
-            git commit -m "convert ipynb"
-            git push -u origin --all
+            sh ./scripts/remove-ipynb.sh
 
       - run:
           name: Push back to Github
           command: |
-            source ./envs/bin/activate
-            git config user.name
-            git config user.email
-            git commit -m "convert ipynb"
+            git config user.name "$gitUser"
+            git config user.email "$gitEmail"
+            git add .
+            git rm $(git ls-files --deleted)
+            git commit -m "convert ipynb to markdown"
             git push -u origin --all
