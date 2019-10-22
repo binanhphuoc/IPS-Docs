@@ -103,6 +103,8 @@ jobs:
       - run:
           name: Merge master branch
           command: |
+            git config user.name "$gitUser"
+            git config user.email "$gitEmail"
             git merge master
             git add .
             git add -u
