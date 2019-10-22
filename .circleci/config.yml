@@ -10,13 +10,7 @@ workflows:
       - test:
           requires:
             - envs
-      - deployStaging:
-          requires:
-            - test
-          filters:
-            branches:
-              only: staging
-      - deployMaster:
+      - deploy:
           requires:
             - test
           filters:
@@ -85,33 +79,7 @@ jobs:
             source ~/tmp/envs/bin/activate
             pip freeze
 
-  deployStaging:
-    docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.4
-    working_directory: ~/repo
-    steps:
-      - attach_workspace:
-          # Must be absolute path or relative path from working_directory
-          at: ~/
-      - checkout
-      - run:
-          name: Activate Environment
-          command: |
-            source ~/tmp/envs/bin/activate
-      - run:
-          name: Merge master branch
-          command: |
-            git config user.name "$gitUser"
-            git config user.email "$gitEmail"
-            git merge master
-            git add .
-            git add -u
-            git commit -m "Merge master changes"
-            git push -u origin -all
-
-  deployMaster:
+  deploy:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
@@ -133,11 +101,6 @@ jobs:
           name: Convert ipynb to Markdown
           command: |
             bash ./scripts/convert-ipynb-to-md.sh
-      
-      - run:
-          name: Remove ipynb
-          command: |
-            bash ./scripts/remove-ipynb.sh
 
       - run:
           name: Push back to Github
