@@ -10,7 +10,13 @@ workflows:
       - test:
           requires:
             - envs
-      - deploy:
+      - deployStaging:
+          requires:
+            - test
+          filters:
+            branches:
+              only: staging
+      - deployMaster:
           requires:
             - test
           filters:
@@ -45,13 +51,13 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            virtualenv envs
-            source ./envs/bin/activate
+            virtualenv ~/tmp/envs
+            source ~/tmp/envs/bin/activate
             pip install -r requirements.txt
 
       - save_cache:
           paths:
-            - ./envs
+            - ~/tmp/envs
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - store_artifacts:
@@ -59,9 +65,9 @@ jobs:
           destination: test-reports
 
       - persist_to_workspace:
-          root: ~/repo
+          root: ~/
           paths: 
-            - ./
+            - tmp/envs
 
   test:
     docker:
@@ -70,16 +76,16 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ~/repo
+          at: ~/
 
       - run:
           name: Test Environment
           command: |
             pwd
-            source ./envs/bin/activate
+            source ~/tmp/envs/bin/activate
             pip freeze
 
-  deploy:
+  deployStaging:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
@@ -88,12 +94,35 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ~/repo
+          at: ~/
+      - checkout
+      - run:
+          name: Activate Environment
+          command: |
+            source ~/tmp/envs/bin/activate
+      - run:
+          name: Merge master branch
+          command:
+            git merge master
+            git push -u origin -all
+
+  deployMaster:
+    docker:
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: circleci/python:3.6.4
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/
+
+      - checkout
 
       - run:
           name: Activate Environment
           command: |
-            source ./envs/bin/activate
+            source ~/tmp/envs/bin/activate
 
       - run:
           name: Convert ipynb to Markdown
@@ -111,7 +140,6 @@ jobs:
             git config user.name "$gitUser"
             git config user.email "$gitEmail"
             git add .
-            git ls-files --deleted
-            #git rm $(git ls-files --deleted)
-            #git commit -m "convert ipynb to markdown"
-            #git push -u origin --all
+            git add -u
+            git commit -m "convert ipynb to markdown"
+            git push -u origin --all
