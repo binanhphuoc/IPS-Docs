@@ -98,12 +98,12 @@ jobs:
       - run:
           name: Convert ipynb to Markdown
           command: |
-            sh ./scripts/convert-ipynb-to-md.sh
-
+            bash ./scripts/convert-ipynb-to-md.sh
+      
       - run:
-          name: Remove all ipynb files
+          name: Remove ipynb
           command: |
-            sh ./scripts/remove-ipynb.sh
+            bash ./scripts/remove-ipynb.sh
 
       - run:
           name: Push back to Github
