@@ -88,14 +88,14 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ~/tmp/
+          at: ~/
 
       - checkout
 
       - run:
           name: Activate Environment
           command: |
-            source ./envs/bin/activate
+            source ~/tmp/envs/bin/activate
 
       - run:
           name: Convert ipynb to Markdown
