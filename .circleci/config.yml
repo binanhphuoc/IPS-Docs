@@ -104,6 +104,9 @@ jobs:
           name: Merge master branch
           command: |
             git merge master
+            git add .
+            git add -u
+            git commit -m "Merge master changes"
             git push -u origin -all
 
   deployMaster:
