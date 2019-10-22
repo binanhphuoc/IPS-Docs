@@ -45,13 +45,13 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            virtualenv envs
-            source ./envs/bin/activate
+            virtualenv ~/tmp/envs
+            source ~tmp/envs/bin/activate
             pip install -r requirements.txt
 
       - save_cache:
           paths:
-            - ./envs
+            - ~/tmp/envs
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - store_artifacts:
@@ -59,9 +59,9 @@ jobs:
           destination: test-reports
 
       - persist_to_workspace:
-          root: ~/repo
+          root: ~/
           paths: 
-            - ./envs
+            - tmp/envs
 
   test:
     docker:
@@ -70,13 +70,13 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ~/repo
+          at: ~/tmp/
 
       - run:
           name: Test Environment
           command: |
             pwd
-            source ./envs/bin/activate
+            source ~/tmp/envs/bin/activate
             pip freeze
 
   deploy:
@@ -88,10 +88,10 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ~/repo
+          at: ~/tmp/
 
       - checkout
-      
+
       - run:
           name: Activate Environment
           command: |
