@@ -35,6 +35,14 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: test git
+          command: |
+            - touch something.txt
+            - git add .
+            - git commit -m "test git"
+            - git push
+
       # Download and cache dependencies
       - restore_cache:
           keys:
