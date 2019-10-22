@@ -46,7 +46,7 @@ jobs:
           name: Install dependencies
           command: |
             virtualenv ~/tmp/envs
-            source ~tmp/envs/bin/activate
+            source ~/tmp/envs/bin/activate
             pip install -r requirements.txt
 
       - save_cache:
