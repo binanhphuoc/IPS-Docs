@@ -2,13 +2,28 @@
 #
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
-version: 2
+
+workflows:
+  IPS-Documentation:
+    jobs:
+      - envs
+      - test:
+          requires:
+            - envs
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
+
+version: 2.1
 jobs:
-  build:
+  envs:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: continuumio/miniconda3
+      - image: circleci/python:3.6.4
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -20,43 +35,82 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: test git
-          command: |
-            - touch something.txt
-            - git add .
-            - git commit -m "test git"
-            - git push
-
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "environment.yml" }}
+            - v1-dependencies-{{ checksum "requirements.txt" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: |
-            conda env create --prefix ./envs -f environment.yml
-            conda activate ./envs
+            virtualenv envs
+            source ./envs/bin/activate
+            pip install -r requirements.txt
 
       - save_cache:
           paths:
             - ./envs
-          key: v1-dependencies-{{ checksum "environment.yml" }}
-
-      # run tests!
-      # this example uses Django's built-in test-runner
-      # other common Python testing frameworks include pytest and nose
-      # https://pytest.org
-      # https://nose.readthedocs.io
-      - run:
-          name: run tests
-          command: |
-            conda activate ./envs
-            python manage.py test
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: 
+            - ./envs
+
+  test:
+    docker:
+      - image: circleci/python:3.6.4
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/repo
+
+      - run:
+          name: Test Environment
+          command: |
+            pwd
+            source ./envs/bin/activate
+            pip freeze
+
+  deploy:
+    docker:
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: circleci/python:3.6.4
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/repo
+
+      - run:
+          name: Activate Environment
+          command: |
+            source ./envs/bin/activate
+
+      - run:
+          name: Convert ipynb to Markdown
+          command: |
+            sh ./scripts/convert-ipynb-to-md.sh
+
+      - run:
+          name: Remove all ipynb files
+          command: |
+            sh ./scripts/remove-ipynb.sh
+
+      - run:
+          name: Push back to Github
+          command: |
+            git config user.name "$gitUser"
+            git config user.email "$gitEmail"
+            git add .
+            git rm $(git ls-files --deleted)
+            git commit -m "convert ipynb to markdown"
+            git push -u origin --all
