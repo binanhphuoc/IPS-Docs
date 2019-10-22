@@ -61,7 +61,7 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: 
-            - ./
+            - ./envs
 
   test:
     docker:
@@ -90,6 +90,8 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: ~/repo
 
+      - checkout
+      
       - run:
           name: Activate Environment
           command: |
