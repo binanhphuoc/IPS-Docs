@@ -98,9 +98,16 @@ jobs:
             source ~/tmp/envs/bin/activate
 
       - run:
-          name: Convert ipynb to Markdown
+          name: Convert ipynb to Markdown in a temp folder
           command: |
-            bash ./scripts/convert-ipynb-to-md.sh
+            bash ./scripts/convert-ipynb-to-md.sh -o ~/tmp/temp
+
+      - run:
+          name: Checkout production and copy Markdowns back to repo
+          command: |
+            git checkout production
+            bash ./scripts/remove-ipynb.sh
+            cp -r ~/tmp/temp .
 
       - run:
           name: Push back to Github
@@ -110,4 +117,4 @@ jobs:
             git add .
             git add -u
             git commit -m "convert ipynb to markdown"
-            git push -u origin --all
+            git push -u origin production
