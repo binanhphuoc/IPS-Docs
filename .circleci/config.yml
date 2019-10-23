@@ -6,10 +6,14 @@
 workflows:
   IPS-Documentation:
     jobs:
-      - envs
+      - envs:
+          ignore:
+            - /production.*/
       - test:
           requires:
             - envs
+          ignore:
+            - /production.*/
       - deploy:
           requires:
             - test
@@ -106,12 +110,19 @@ jobs:
           name: Convert ipynb to Markdown in a temp folder
           command: |
             bash ~/tmp/scripts/convert-ipynb-to-md.sh -o ~/temp
+      
+      - run:
+          name: Copy necessary files into temp folder
+          command: |
+            cp -r ./.circleci ~/temp
+            cp -r ./assets ~/temp
 
       - run:
           name: Checkout production and copy Markdowns back to repo
           command: |
             git checkout production
-            bash ~/tmp/scripts/remove-file-format.sh -f md
+            # Remove old md files
+            rm -r ./*
             cp -r ~/temp/. ./
 
       - run:
