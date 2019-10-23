@@ -48,6 +48,11 @@ jobs:
             virtualenv ~/tmp/envs
             source ~/tmp/envs/bin/activate
             pip install -r requirements.txt
+      
+      - run:
+          name: Copy scripts and persist workspace
+          command: |
+            cp -r ./scripts ~/tmp
 
       - save_cache:
           paths:
@@ -61,7 +66,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths: 
-            - tmp/envs
+            - tmp
 
   test:
     docker:
@@ -100,14 +105,14 @@ jobs:
       - run:
           name: Convert ipynb to Markdown in a temp folder
           command: |
-            bash ./scripts/convert-ipynb-to-md.sh -o ~/tmp/temp
+            bash ~/tmp/scripts/convert-ipynb-to-md.sh -o ~/temp
 
       - run:
           name: Checkout production and copy Markdowns back to repo
           command: |
             git checkout production
-            bash ./scripts/remove-file-format.sh -f md
-            cp -a ~/tmp/temp/. ./
+            bash ~/tmp/scripts/remove-file-format.sh -f md
+            cp -r ~/temp/. ./
 
       - run:
           name: Push back to Github
