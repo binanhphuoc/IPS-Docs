@@ -106,8 +106,8 @@ jobs:
           name: Checkout production and copy Markdowns back to repo
           command: |
             git checkout production
-            bash ./scripts/remove-ipynb.sh
-            cp -r ~/tmp/temp .
+            bash ./scripts/remove-file-format.sh -f md
+            cp -a ~/tmp/temp/. ./
 
       - run:
           name: Push back to Github
