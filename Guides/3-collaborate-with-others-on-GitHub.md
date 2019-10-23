@@ -27,8 +27,3 @@
 &emsp;[5.1. Understand Django project settings](#5)<br>
 
 ## THE FIRST HEADER - TEST SERVER
-
-
-```python
-
-```

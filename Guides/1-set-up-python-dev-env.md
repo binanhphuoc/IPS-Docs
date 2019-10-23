@@ -1,5 +1,4 @@
-# Article 1
-# Set Up a Python Development Environment
+# Article 1: Set Up a Python Development Environment
 
 From Section 1 to Section 3, we will briefly introduce you to a few necessary dev-tools for Python development. You can jump to [Installation in Section 4](#4) if you are not in the mood of reading.
 
@@ -34,7 +33,7 @@ VS Code is a customizable editor for writing and debugging code. This editor can
 
 Download: https://code.visualstudio.com/
 
-<img src="./images/VS_Code.png"/>
+<img src="../assets/VS_Code.png"/>
 
 <a id='1.2'></a>
 #### 1.2. Anaconda
@@ -43,7 +42,7 @@ Anaconda is a Python package manager for creating virtual environments, installi
 
 Download: https://www.anaconda.com/distribution/
 
-<img src="./images/Anaconda.png"/>
+<img src="../assets/Anaconda.png"/>
 
 In the image above, we can see Jupyter Lab and Jupyter Notebook already installed inside of Anaconda. These two applications together can launch an interactive environment for live-testing new Python libraries.
 
@@ -54,7 +53,7 @@ A Python Web Framework provides some basic setup to help developers get started 
 
 The framework that we will use for our application is Django, a fullstack web framework that has been set up with basic libraries and a project structure for web services. Because our goal is to create a secure and scalable Application Server that serves complex computations from authenticated requests, Django is suitable to our use case.
 
-<br><img src="./images/Django.png"/><br>
+<br><img src="../assets/Django.png"/><br>
 
 We will cover how to download and use this framework in another section. For now, if you need more information on what Django is, we include some materials below:
 
@@ -69,7 +68,7 @@ SymPy is a Python library for symbolic mathematics. It aims to become a full-fea
 
 MapleSoft and Wolfram Language are also symbolic languages, but they are very strict for what we want to achieve: a free and easy project setup that is compatible with other software-dev tools. Therefore, SymPy is a great choice because it is written entirely in Python, a popular programming language that is backed by an extensive pool of users and businesses.
 
-<img src='./images/Sympy_logo.svg'/>
+<img src='../assets/Sympy_logo.svg'/>
 
 <a id='4'></a>
 ## 4. Installation
@@ -105,7 +104,7 @@ For Windows user, in order to use command <code>conda</code> in the <a href='htt
 
 See the following image for reference.
 
-<img src='./images/Conda_command.png'/>
+<img src='../assets/Conda_command.png'/>
 
 <a id='5'></a>
 ## 5. Create a Simple Application Server locally
@@ -163,7 +162,7 @@ A conda environment is a directory that contains a specific collection of conda 
 
 &emsp;&emsp;&emsp;Create a folder with any name you want. This name does not affect your project settings. In the image below, the folder name is <code>simple-app-server</code>.
 
-<img src='./images/5.3-step1.png'/>
+<img src='../assets/5.3-step1.png'/>
 
 &emsp;__Step 2: In VS Code, open the newly created folder__
 
@@ -173,7 +172,7 @@ A conda environment is a directory that contains a specific collection of conda 
 
 &emsp;&emsp;&emsp;If you do it properly, you should see this view below.
 
-<img src='./images/5.3-step2.png'/>
+<img src='../assets/5.3-step2.png'/>
 
 &emsp;__Step 3: Toggle on the Terminal/Command Prompt__
 
@@ -182,7 +181,7 @@ A conda environment is a directory that contains a specific collection of conda 
 
 Then, the view should look like this:
 
-<img src='./images/5.3-step3.png'/>
+<img src='../assets/5.3-step3.png'/>
 
 &emsp;__Step 4: Activate the <code>simple-app-server</code> environment__
 
@@ -192,7 +191,7 @@ Then, the view should look like this:
 
 &emsp;&emsp;&emsp;In the Terminal/Command Prompt, type in <code>django-admin startproject myserver</code> to create a Django project. If you do it properly, you should see this view:
 
-<img src='./images/5.3-step4.png'/>
+<img src='../assets/5.3-step4.png'/>
 
 &emsp;__Step 6: Run the Server__
 
@@ -200,11 +199,11 @@ Then, the view should look like this:
 - Move to the <code>myserver</code> directory: <code>cd myserver</code>
 - Run the server: <code>python manage.py runserver</code>
 
-<img src='./images/5.3-step6.png'/>
+<img src='../assets/5.3-step6.png'/>
 
 - Now open the browser and access this link: http://127.0.0.1:8000/ or <a href='http://localhost:8000/'>localhost:8000</a>
 
-<img src='./images/5.3-step6-2.png'/>
+<img src='../assets/5.3-step6-2.png'/>
 
 
 #### Feel free to edit something in the code. If you have some experience in Python and would like to write your own server, this project template above is a very great start.
@@ -225,8 +224,3 @@ You may have some questions like:
     
 ### [Next >>](./2-intro-to-git-part-1-commit-changes.ipynb)
 # Article 2: Introduction to Git - Part 1: Commit Changes
-
-
-```python
-
-```

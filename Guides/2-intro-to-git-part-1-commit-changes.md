@@ -111,7 +111,7 @@ First, let's open this link: http://git-school.github.io/visualizing-git/#free. 
 
 Once you open the link, look at the visualization panel. You can see a node labelled with __`master - HEAD`__ similar to the image below:
 
-<img src='./images/2-2.2.1-1-first_commit_node.png'/>
+<img src='../assets/2-2.2.1-1-first_commit_node.png'/>
 
 This node represents the current __commit__ of your project. It contains all the code files that you have created so far.
 
@@ -123,7 +123,7 @@ Then, let's say you just added some code for a new feature `featureA`, and you n
 
 If you do it properly, you should see a new node created and appended next to your first commit:
 
-<img src='./images/2-2.2.1-2-second_commit_node.png'/>
+<img src='../assets/2-2.2.1-2-second_commit_node.png'/>
 
 This new node represents the new commit that you just made. Now, let's say you deleted some file `file1.js` from the project, and you commit this change into the Git system with this following command:
 
@@ -131,7 +131,7 @@ This new node represents the new commit that you just made. Now, let's say you d
 
 Then, you should expect the following result:
 
-<img src='./images/2-2.2.1-3-third_commit_node.png'/>
+<img src='../assets/2-2.2.1-3-third_commit_node.png'/>
 
 <a id='3.2'></a>
 ### 3.2. `git log`
@@ -140,7 +140,7 @@ So far, you have three commits (or versions) of your project as you can see in t
 
 &emsp;&emsp;`git log`
 
-<img src='./images/2-2.2.1-4-git_log.png'/>
+<img src='../assets/2-2.2.1-4-git_log.png'/>
 
 <a id='3.3'></a>
 ### 3.3. `git checkout`
@@ -149,7 +149,7 @@ Now, for some reason, you want to have a look at the deleted file `file1.js`. Yo
 
 &emsp;&emsp;`git checkout f475695`
 
-<img src='./images/2-2.2.1-5-git_checkout.png'/>
+<img src='../assets/2-2.2.1-5-git_checkout.png'/>
 
 As you see, `HEAD` is now under the previous commit that you made. What does that mean? It means that, when you look at your project folder right now, all the files in your previous commit, including your deleted file `file1.js`, has been recovered. You will see this when we practice with a real project folder in the [next section](#4).
 
@@ -157,7 +157,7 @@ After checking that deleted file, let's say you want to get back to the most rec
 
 &emsp;&emsp;`git checkout master`
 
-<img src='./images/2-2.2.1-6-git_checkout_master.png'/>
+<img src='../assets/2-2.2.1-6-git_checkout_master.png'/>
 
 As you see, the `master` label is a bit special. As we add more commits, the `master` label will always point at the last commit that we make. Because of this characteristic, we usually call it a __branch__ instead. A __branch__ is simply a pointer to a specific commit -- nothing more.
 
@@ -192,7 +192,7 @@ As you extract the zip file, make sure that you see a folder named `myserver` in
 
 Open your project folder `myserver` in VS Code, and toggle `Ctrl + ~`/`Cmd + ~` to open the Terminal/Command Prompt. If you type `git status`, you'll see that git currently does not track your project folder.
 
-<img src='./images/2-4.1-1-git_init.png'/>
+<img src='../assets/2-4.1-1-git_init.png'/>
 
 To initialize Git for your project folder, type in the following command:
 
@@ -200,7 +200,7 @@ To initialize Git for your project folder, type in the following command:
 
 If you do it properly, you should expect this following result:
 
-<img src='./images/2-4.1-2-git_init_2.png'/>
+<img src='../assets/2-4.1-2-git_init_2.png'/>
 
 What happens when you initialize git? Git will create a hidden folder named `.git` inside of your project folder. This is where git stores all the commits along with other tracking information of your project.
 
@@ -231,7 +231,7 @@ Here, all files are new to Git, so Git treats them as newly added files. You wan
 
 `.` stands for the current folder, which is `myserver`. Now, if you type `git status`, you can see all the changes to be committed as follows:
 
-<img src='./images/2-4.2-1-git-status.png'/>
+<img src='../assets/2-4.2-1-git-status.png'/>
 
 #### Step 2: Commit
 
@@ -239,7 +239,7 @@ Great, now it's time to commit all these new files:
 
 &emsp;&emsp;`git commit -m "first commit"`
 
-<img src='./images/2-4.2-2-git-commit.png'/>
+<img src='../assets/2-4.2-2-git-commit.png'/>
 
 To list all the commits so far with each commit written in one line, type:
 
@@ -247,18 +247,18 @@ To list all the commits so far with each commit written in one line, type:
 
 As shown, there is only one commit so far:
 
-<img src='./images/2-4.2-3-git-log.png'/>
+<img src='../assets/2-4.2-3-git-log.png'/>
 
 <a id='4.3'></a>
 ### 4.3. Change something in the project and Commit
 
 In file `myserver/myserver/settings.py`, change the value of `SECRET_KEY` to `'my_secret_key'`. Then, save the file.
 
-<img src='./images/2-4.3-1-make_changes.png'/>
+<img src='../assets/2-4.3-1-make_changes.png'/>
 
 Now, if you type `git status`, Git will say that it sees some changes like this:
 
-<img src='./images/2-4.3-2-git_status.png'/>
+<img src='../assets/2-4.3-2-git_status.png'/>
 
 Let's commit this:
 
@@ -267,7 +267,7 @@ Let's commit this:
 
 Listing all commits out, you can now see your second commit in the log as follows:
 
-<img src='./images/2-4.3-3-git_log.png'/>
+<img src='../assets/2-4.3-3-git_log.png'/>
 
 <a id='4.4'></a>
 ### 4.4. Checkout the first commit
@@ -278,13 +278,13 @@ Now, let's go back to the first commit:
 
 If you do it correctly, you can see that the `SECRET_KEY` has been reverted.
 
-<img src='./images/2-4.4-1-git_checkout.png'/>
+<img src='../assets/2-4.4-1-git_checkout.png'/>
 
 You can also verify that you are currently at your first commit by `git log` as follows:
 
 &emsp;&emsp;`git log --oneline --all`
 
-<img src='./images/2-4.4-2-git_log.png'/>
+<img src='../assets/2-4.4-2-git_log.png'/>
 
 As you can see, `HEAD` is now at the first commit.
 
