@@ -7,13 +7,17 @@ workflows:
   IPS-Documentation:
     jobs:
       - envs:
-          ignore:
-            - /production.*/
+          filters:
+            branches:
+              ignore:
+                - /production.*/
       - test:
           requires:
             - envs
-          ignore:
-            - /production.*/
+          filters:
+            branches:
+              ignore:
+                - /production.*/
       - deploy:
           requires:
             - test
