@@ -6,10 +6,18 @@
 workflows:
   IPS-Documentation:
     jobs:
-      - envs
+      - envs:
+          filters:
+            branches:
+              ignore:
+                - /production.*/
       - test:
           requires:
             - envs
+          filters:
+            branches:
+              ignore:
+                - /production.*/
       - deploy:
           requires:
             - test
@@ -48,6 +56,11 @@ jobs:
             virtualenv ~/tmp/envs
             source ~/tmp/envs/bin/activate
             pip install -r requirements.txt
+      
+      - run:
+          name: Copy scripts and persist workspace
+          command: |
+            cp -r ./scripts ~/tmp
 
       - save_cache:
           paths:
@@ -61,7 +74,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths: 
-            - tmp/envs
+            - tmp
 
   test:
     docker:
@@ -98,9 +111,23 @@ jobs:
             source ~/tmp/envs/bin/activate
 
       - run:
-          name: Convert ipynb to Markdown
+          name: Convert ipynb to Markdown in a temp folder
           command: |
-            bash ./scripts/convert-ipynb-to-md.sh
+            bash ~/tmp/scripts/convert-ipynb-to-md.sh -o ~/temp
+      
+      - run:
+          name: Copy necessary files into temp folder
+          command: |
+            cp -r ./.circleci ~/temp
+            cp -r ./assets ~/temp
+
+      - run:
+          name: Checkout production and copy Markdowns back to repo
+          command: |
+            git checkout production
+            # Remove old md files
+            rm -r ./*
+            cp -r ~/temp/. ./
 
       - run:
           name: Push back to Github
@@ -110,4 +137,4 @@ jobs:
             git add .
             git add -u
             git commit -m "convert ipynb to markdown"
-            git push -u origin --all
+            git push -u origin production
