@@ -1,4 +1,4 @@
-# 1-set-up-python-dev-env
+# Article 1: Set Up Python
 
 ## Article 1: Set Up a Python Development Environment
 
