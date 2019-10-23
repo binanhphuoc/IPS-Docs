@@ -219,8 +219,3 @@ You may have some questions like:
 - Do they have to set up everything from the beginning, or is there any shortcut to make it fast?
 
 #### 6.2. Create a new feature for Django projects
-
-
-    
-### [Next >>](./2-intro-to-git-part-1-commit-changes.ipynb)
-# Article 2: Introduction to Git - Part 1: Commit Changes
