@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#source ~/tmp/envs/bin/activate
+source ~/tmp/envs/bin/activate
 OUTPUT_DIR="."
 
 while getopts ":o:" opt; do
@@ -34,6 +34,3 @@ do
     # Convert files to folder $output
     jupyter nbconvert --output-dir=$output --to markdown $f
 done
-
-#cp from folder
-#cp -r $OUTPUT_DIR ./dest
