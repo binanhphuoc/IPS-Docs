@@ -1,9 +1,10 @@
 # Table of contents
 
 * [Initial page](README.md)
-* [Guides](guides/README.md)
-  * [Article 3: Share Code with Collaborators on GitHub](guides/3-collaborate-with-others-on-github/README.md)
-    * [Article 1: Set Up a Python Development Environment](guides/3-collaborate-with-others-on-github/1-set-up-python-dev-env.md)
+
+## Guides <a id="Guides"></a>
+* [Article 3: Share Code with Collaborators on GitHub](guides/3-collaborate-with-others-on-github/README.md)
+* [Article 1: Set Up a Python Development Environment](guides/3-collaborate-with-others-on-github/1-set-up-python-dev-env.md)
 
 ## Guides <a id="guides-1"></a>
 
