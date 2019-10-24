@@ -120,6 +120,7 @@ jobs:
           command: |
             cp -r ./.circleci ~/temp
             cp -r ./assets ~/temp
+            cp -r ./SUMMARY.md ~/temp
 
       - run:
           name: Checkout production and copy Markdowns back to repo
