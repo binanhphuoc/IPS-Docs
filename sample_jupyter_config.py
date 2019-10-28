@@ -5,7 +5,7 @@
 
 # c.IPKernelApp.module_to_run = './run.py'
 
-get_ipython().profile_dir.startup_dir
+# get_ipython().profile_dir.startup_dir
 
 try:
     ip = get_ipython()
