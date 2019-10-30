@@ -1,11 +1,18 @@
-# try:
-#     c = get_config()
-# except NameError:
-#     print("No get_config")
+import IPython
+ipython_path = IPython.paths.locate_profile(profile='default')
 
-# c.IPKernelApp.module_to_run = './run.py'
+# Copy start.py to the the folder above
 
-# get_ipython().profile_dir.startup_dir
+# Read contents of ipython_config.py
+try:
+    f = open("{:s}/ipython_config.py".format(ipython_path), "r")
+    if f.mode == "r":
+        contents = f.read()
+        print(contents)
+except FileNotFoundError:
+    f = open("{:s}/ipython_config.py", "w+")
+    f.write("Test this module")
+    f.close()
 
 try:
     ip = get_ipython()
@@ -25,5 +32,5 @@ except NameError:
 import os
 @exit_register
 def callback():
-    os.system('echo hello > ./hello.txt')
-    print('I\'m done!')
+    # Do something when Jupyter exits
+    print("Exiting Jupyter Notebook...")

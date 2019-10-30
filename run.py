@@ -1,4 +1,4 @@
-from sympy.printing.latex import LatexPrinter
+# from sympy.printing.latex import LatexPrinter
 def funcA():
     print("A")
 
