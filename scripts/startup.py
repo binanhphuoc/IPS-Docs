@@ -5,7 +5,7 @@ def disp_latex(expr, **settings):
     return LatexPrinter(settings).doprint(expr).replace('$$', '$$\displaystyle', 1)
 
 from sympy.interactive import init_printing
-init_printing(latex_mode="equation",itex=True,latex_printer=disp_latex)
+init_printing(use_latex="mathjax",latex_mode="equation",itex=True,latex_printer=disp_latex)
     
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
