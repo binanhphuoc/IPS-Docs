@@ -54,6 +54,7 @@ $$\displaystyle9$$
 
 ```python
 get_ipython().profile_dir.startup_dir
+print("okay")
 ```
 
 
@@ -63,9 +64,13 @@ get_ipython().profile_dir.startup_dir
 
 
 
+    okay
+
+
 
 ```python
 LatexPrinter
+print("yes")
 ```
 
 
@@ -73,6 +78,9 @@ LatexPrinter
 
     sympy.printing.latex.LatexPrinter
 
+
+
+    yes
 
 
 
