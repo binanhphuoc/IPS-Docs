@@ -116,6 +116,7 @@ jobs:
           name: Create production folder and remove all files in production
           command: |
             mkdir -p ~/production
+            cd ~/production
             git clone $gitRemoteURL .
             git checkout production
             rm -r ./*
