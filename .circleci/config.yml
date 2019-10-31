@@ -62,7 +62,7 @@ jobs:
       - run:
           name: Copy scripts and persist workspace
           command: |
-            cp -r ./scripts ~/tmp
+            cp -r ./scripts ~/tmp/scripts
 
       - save_cache:
           paths:
