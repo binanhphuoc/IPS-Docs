@@ -11,11 +11,9 @@
 
 <p><!-- Remove indentations for output text and add div classes  -->
   {% block outputs %}
-{{'{% code-tabs %}
-{% code-tabs-item title="Out:" %}'}}
+<p>
 {{ super() }}
-{{'{% endcode-tabs-item %}
-{% endcode-tabs %}'}}
+</p>
   {% endblock outputs %}
 </p>
 
