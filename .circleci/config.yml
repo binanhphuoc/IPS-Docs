@@ -63,7 +63,7 @@ jobs:
           name: Copy scripts and persist workspace
           command: |
             mkdir -p ~/tmp/scripts
-            cp -r ./scripts ~/tmp/scripts/
+            cp -r ./scripts/* ~/tmp/scripts/
 
       - save_cache:
           paths:
