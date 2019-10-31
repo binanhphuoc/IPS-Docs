@@ -113,29 +113,30 @@ jobs:
           at: ~/
 
       - run:
-          name: Convert ipynb to Markdown in a temp folder
+          name: Create production folder and remove all files in production
           command: |
-            bash ~/tmp/scripts/convert-ipynb-to-md.sh -o ~/temp
-      
-      - run:
-          name: Copy necessary files into temp folder
-          command: |
-            cp -r ./.circleci ~/temp
-            cp -r ./assets ~/temp
-            cp -r ./SUMMARY.md ~/temp
-            cp -r ./.gitignore ~/temp
+            mkdir -p ~/production
+            git clone $gitRemoteURL
+            git checkout production
+            rm -r ./*
 
       - run:
-          name: Checkout production and copy Markdowns back to repo
+          name: Convert ipynb to Markdown in a production folder
           command: |
-            git checkout production
-            # Remove old md files
-            rm -r ./*
-            cp -r ~/temp/. ./
+            bash ~/tmp/scripts/convert-ipynb-to-md.sh -o ~/production
+      
+      - run:
+          name: Copy necessary files into production folder
+          command: |
+            cp -r ./.circleci ~/production
+            cp -r ./assets ~/production
+            cp -r ./SUMMARY.md ~/production
+            cp -r ./.gitignore ~/production
 
       - run:
           name: Push back to Github
           command: |
+            cd ~/production
             git config user.name "$gitUser"
             git config user.email "$gitEmail"
             git add .
