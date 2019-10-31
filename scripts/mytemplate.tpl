@@ -10,11 +10,15 @@
 </p>
 
 <p><!-- Remove indentations for output text and add div classes  -->
-  {% block outputs %}
+  {% block output %}
+  {% if 'text/latex' not in output.data %}
 <p>
 {{ super() }}
 </p>
-  {% endblock outputs %}
+  {% else %}
+{{ super() }}
+  {% endif %}
+  {% endblock output %}
 </p>
 
 <p>{% block traceback_line  %}
