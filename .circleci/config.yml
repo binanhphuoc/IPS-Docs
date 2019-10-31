@@ -111,11 +111,6 @@ jobs:
           at: ~/
 
       - run:
-          name: Activate Environment
-          command: |
-            pipenv shell
-
-      - run:
           name: Convert ipynb to Markdown in a temp folder
           command: |
             bash ~/tmp/scripts/convert-ipynb-to-md.sh -o ~/temp

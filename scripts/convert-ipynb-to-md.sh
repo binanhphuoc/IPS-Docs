@@ -1,6 +1,5 @@
 #!/bin/bash
 
-pipenv shell
 OUTPUT_DIR="."
 
 while getopts ":o:" opt; do
@@ -32,5 +31,5 @@ do
     output=$(dirname $output)
     echo $output
     # Convert files to folder $output
-    jupyter nbconvert --output-dir=$output --to markdown $f
+    pipenv run jupyter nbconvert --output-dir=$output --to markdown $f
 done
