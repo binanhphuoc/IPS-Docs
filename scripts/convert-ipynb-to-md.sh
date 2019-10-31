@@ -22,7 +22,12 @@ while getopts ":o:" opt; do
 done
 shift $((OPTIND -1))
 
-IPYNB_FILES=$(find . -name '*.ipynb' -not -path "./envs/*" -not -path "./.ipynb_checkpoints/*")
+IPYNB_FILES=$(find . -name '*.ipynb'\
+  -not -path "./.venv/*"\
+  -not -path "*/.ipynb_checkpoints/*"\
+  -not -path "*/__pycache__/*"\
+  -not -path "*/.DS_Store/*"\
+  -not -path "./.vscode/*")
 for f in $IPYNB_FILES
 do
     # Replace "." with "$OUTPUT_DIR"
