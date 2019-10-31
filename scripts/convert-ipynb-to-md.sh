@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/tmp/envs/bin/activate
+pipenv shell
 OUTPUT_DIR="."
 
 while getopts ":o:" opt; do

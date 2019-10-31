@@ -1,16 +1,14 @@
-# from sympy import *
-# from sympy.printing.latex import LatexPrinter
+from sympy import *
+from sympy.printing.latex import LatexPrinter
 
-# #get_ipython().profile_dir.startup_dir
+def disp_latex(expr, **settings):
+    return LatexPrinter(settings).doprint(expr).replace('$$', '$$\displaystyle', 1)
 
-# def disp_latex(expr, **settings):
-#     return LatexPrinter(settings).doprint(expr).replace('$$', '$$\displaystyle', 1)
-
-# from sympy.interactive import init_printing
-# init_printing(latex_mode="equation",itex=True,latex_printer=disp_latex)
+from sympy.interactive import init_printing
+init_printing(latex_mode="equation",itex=True,latex_printer=disp_latex)
     
-# from IPython.core.interactiveshell import InteractiveShell
-# InteractiveShell.ast_node_interactivity = "all"
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
 
 # try:
 #     def exit_register(fun, *args, **kwargs):
