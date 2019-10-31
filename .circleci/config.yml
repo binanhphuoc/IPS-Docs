@@ -115,7 +115,9 @@ jobs:
       - checkout
       - run:
           name: Remove all files in production
-          command: rm -r ./*
+          command: |
+            git checkout production
+            rm -r ./*
 
       - run:
           name: Convert ipynb to Markdown in a production folder
