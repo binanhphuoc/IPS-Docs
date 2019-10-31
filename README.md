@@ -16,7 +16,7 @@ expr
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-<p>
+  
 
 
 
@@ -25,7 +25,7 @@ $$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}
 
 
 
-</p>
+  
   
 
 {% code-tabs %}
@@ -39,7 +39,7 @@ integ.doit()
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-<p>
+  
 
 
 
@@ -48,7 +48,7 @@ $$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
 
 
 
-</p>
+  
   
 
 {% code-tabs %}
@@ -64,7 +64,7 @@ a
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-<p>
+  
 
 
 
@@ -73,6 +73,10 @@ $$\displaystyle5$$
 
 
 
+  
+  
+  
+
 
 
 
@@ -80,7 +84,7 @@ $$\displaystyle9$$
 
 
 
-</p>
+  
   
 
 {% code-tabs %}
@@ -94,6 +98,7 @@ print("okay")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
+  
 <p>
 
 
@@ -103,10 +108,17 @@ print("okay")
 
 
 
+</p>
+  
+  
+  
+<p>
+
     okay
 
 
 </p>
+  
   
 
 {% code-tabs %}
@@ -120,6 +132,7 @@ print("yes")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
+  
 <p>
 
 
@@ -129,8 +142,15 @@ print("yes")
 
 
 
+</p>
+  
+  
+  
+<p>
+
     yes
 
 
 </p>
+  
   

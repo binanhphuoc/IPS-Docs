@@ -42,7 +42,7 @@ x
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-<p>
+  
 
 
 
@@ -51,6 +51,10 @@ $$\displaystyle5$$
 
 
 
+  
+  
+  
+
 
 
 
@@ -58,7 +62,7 @@ $$\displaystyle9$$
 
 
 
-</p>
+  
   
 
 {% code-tabs %}
