@@ -96,6 +96,7 @@ jobs:
           command: |
             pwd
             pipenv run pip freeze
+            ls ~/tmp
 
   deploy:
     docker:
