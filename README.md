@@ -16,8 +16,7 @@ expr
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-{% code-tabs %}
-{% code-tabs-item title="Out:" %}
+<p>
 
 
 
@@ -26,8 +25,7 @@ $$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}
 
 
 
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+</p>
   
 
 {% code-tabs %}
@@ -41,8 +39,7 @@ integ.doit()
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-{% code-tabs %}
-{% code-tabs-item title="Out:" %}
+<p>
 
 
 
@@ -51,8 +48,7 @@ $$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
 
 
 
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+</p>
   
 
 {% code-tabs %}
@@ -68,8 +64,7 @@ a
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-{% code-tabs %}
-{% code-tabs-item title="Out:" %}
+<p>
 
 
 
@@ -85,8 +80,7 @@ $$\displaystyle9$$
 
 
 
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+</p>
   
 
 {% code-tabs %}
@@ -100,8 +94,7 @@ print("okay")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-{% code-tabs %}
-{% code-tabs-item title="Out:" %}
+<p>
 
 
 
@@ -113,8 +106,7 @@ print("okay")
     okay
 
 
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+</p>
   
 
 {% code-tabs %}
@@ -128,8 +120,7 @@ print("yes")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-{% code-tabs %}
-{% code-tabs-item title="Out:" %}
+<p>
 
 
 
@@ -141,6 +132,5 @@ print("yes")
     yes
 
 
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+</p>
   

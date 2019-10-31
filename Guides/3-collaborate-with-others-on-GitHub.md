@@ -42,8 +42,7 @@ x
 {% endcode-tabs-item %}
 {% endcode-tabs %}
   
-{% code-tabs %}
-{% code-tabs-item title="Out:" %}
+<p>
 
 
 
@@ -59,8 +58,7 @@ $$\displaystyle9$$
 
 
 
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+</p>
   
 
 {% code-tabs %}
