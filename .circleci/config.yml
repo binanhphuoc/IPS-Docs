@@ -106,29 +106,29 @@ jobs:
       - image: circleci/python:3.7.4
         environment:
           PIPENV_VENV_IN_PROJECT: "enabled"
-    working_directory: ~/repo
+    working_directory: ~/production
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: ~/
 
+      - checkout
       - run:
-          name: Create production folder and remove all files in production
+          name: Remove all files in production
           command: |
-            mkdir -p ~/production
-            cd ~/production
-            git clone $gitRemoteURL .
             git checkout production
             rm -r ./*
 
       - run:
           name: Convert ipynb to Markdown in a production folder
           command: |
+            cd ~/repo
             bash ~/tmp/scripts/convert-ipynb-to-md.sh -o ~/production
       
       - run:
           name: Copy necessary files into production folder
           command: |
+            cd ~/repo
             cp -r ./.circleci ~/production
             cp -r ./assets ~/production
             cp -r ./SUMMARY.md ~/production
@@ -137,7 +137,6 @@ jobs:
       - run:
           name: Push back to Github
           command: |
-            cd ~/production
             git config user.name "$gitUser"
             git config user.email "$gitEmail"
             git add .
