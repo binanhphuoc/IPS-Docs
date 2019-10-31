@@ -2,33 +2,20 @@
 
 ## In this tutorial, we will learn how to set up a Python Dev Process.
 
-
 ```python
 x = symbols("x")
 expr = (x**4 + x**2*exp(x) - x**2 - 2*x*exp(x) - 2*x - exp(x))*exp(x)/((x - 1)**2*(x + 1)**2*(exp(x) + 1))
 expr
 ```
 
-
-
-
 $$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$
-
-
-
 
 ```python
 integ = Integral(expr, x)
 integ.doit()
 ```
 
-
-
-
 $$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
-
-
-
 
 ```python
 x = 5
@@ -37,53 +24,52 @@ x
 a
 ```
 
-
-
-
 $$\displaystyle5$$
 
-
-
-
-
-
 $$\displaystyle9$$
-
-
-
 
 ```python
 get_ipython().profile_dir.startup_dir
 print("okay")
 ```
 
+```text
+'/Users/phuocdo/.ipython/profile_default/startup'
 
 
 
-    '/Users/phuocdo/.ipython/profile_default/startup'
+okay
+```
 
-
-
-    okay
-
-
-
+{% code-tabs %}
+{% code-tabs-item title="In:" %}
 ```python
 LatexPrinter
 print("yes")
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-
-
-
-    sympy.printing.latex.LatexPrinter
-
-
-
-    yes
-
-
-
-```python
-
+{% code-tabs %}
+{% code-tabs-item title="Out:" %}
+```text
+sympy.printing.latex.LatexPrinter
+yes
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+mbmb
+
+{% tabs %}
+{% tab title="First Tab" %}
+| Yeah | Okay |
+| :--- | :--- |
+| what | what |
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
