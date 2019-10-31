@@ -62,8 +62,8 @@ jobs:
       - run:
           name: Copy scripts and persist workspace
           command: |
-            mkdir -p ~/tmp/scripts
-            cp -r ./scripts ~/tmp/scripts
+            #mkdir -p ~/tmp/scripts
+            cp -r ./scripts ~/tmp/
 
       - save_cache:
           paths:
@@ -97,6 +97,7 @@ jobs:
           command: |
             pwd
             pipenv run pip freeze
+            ls ~/tmp
             ls ~/tmp/scripts
 
   deploy:
