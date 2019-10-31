@@ -97,7 +97,7 @@ jobs:
           command: |
             pwd
             pipenv run pip freeze
-            ls ~/tmp
+            ls ~/tmp/scripts
 
   deploy:
     docker:
