@@ -26,3 +26,30 @@
 &emsp;[5.1. Understand Django project settings](#5)<br>
 
 ## THE FIRST HEADER - TEST SERVER
+
+
+```python
+a = 5
+x = a + 4
+a
+x
+```
+
+
+
+
+$$\displaystyle5$$
+
+
+
+
+
+
+$$\displaystyle9$$
+
+
+
+
+```python
+
+```
