@@ -49,7 +49,7 @@ print("okay")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-'/Users/phuocdo/.ipython/profile_default/startup'
+'/Users/phuocdo/.ipython/profile_default/startup' 
 okay
 
 {% code-tabs %}
