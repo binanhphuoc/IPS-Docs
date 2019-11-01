@@ -17,6 +17,12 @@
 </p>
 
 <p><!-- Remove indentations for output text and add div classes  -->
+{% block outputs %}**Out:**<br>
+{{super().strip()}}<br>
+{% endblock outputs %}
+</p>
+
+<p><!-- Remove indentations for output text and add div classes  -->
 {% block output %}{{super().strip()}}<br>
 {% endblock output %}
 </p>
