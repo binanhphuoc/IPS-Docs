@@ -41,7 +41,7 @@ x
 
 **Out:**<br>
 $$\displaystyle5$$<br>
-$$\displaystyle9$$<br><br>
+$$\displaystyle9$$<br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}

@@ -14,7 +14,7 @@ expr
 {% endcode-tabs %}
 
 **Out:**<br>
-$$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$<br><br>
+$$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$<br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -26,7 +26,7 @@ integ.doit()
 {% endcode-tabs %}
 
 **Out:**<br>
-$$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$<br><br>
+$$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$<br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -41,7 +41,7 @@ a
 
 **Out:**<br>
 $$\displaystyle5$$<br>
-$$\displaystyle9$$<br><br>
+$$\displaystyle9$$<br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -54,7 +54,7 @@ print("okay")
 
 **Out:**<br>
 '/Users/phuocdo/.ipython/profile_default/startup'<br>
-okay<br><br>
+okay<br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -67,4 +67,4 @@ print("yes")
 
 **Out:**<br>
 sympy.printing.latex.LatexPrinter<br>
-yes<br><br>
+yes<br>
