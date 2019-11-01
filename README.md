@@ -12,8 +12,9 @@ expr
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-  $$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$
-  
+
+$$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$
+
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -22,8 +23,9 @@ integ.doit()
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-  $$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
-  
+
+$$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
+
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -34,9 +36,10 @@ a
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-  $$\displaystyle5$$
+
+$$\displaystyle5$$
 $$\displaystyle9$$
-  
+
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -46,9 +49,9 @@ print("okay")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-'/Users/phuocdo/.ipython/profile_default/startup'  
+'/Users/phuocdo/.ipython/profile_default/startup'
 okay
-  
+
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -57,6 +60,6 @@ print("yes")
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-  sympy.printing.latex.LatexPrinter
+
+sympy.printing.latex.LatexPrinter
 yes
-  

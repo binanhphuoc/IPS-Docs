@@ -38,9 +38,10 @@ x
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-  $$\displaystyle5$$
+
+$$\displaystyle5$$
 $$\displaystyle9$$
-  
+
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -48,4 +49,3 @@ $$\displaystyle9$$
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-  
