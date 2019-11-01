@@ -64,8 +64,8 @@ print("yes")
 {% endcode-tabs %}
 
 > <code style="color:red; background-color:transparent">Out:</code><br>
-> sympy.printing.latex.LatexPrinter  
-> yes
+> sympy.printing.latex.LatexPrinter<br>
+> yes<br>
 
 > Yeahhhh  
 > oka
