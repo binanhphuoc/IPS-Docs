@@ -1,6 +1,9 @@
 import os
 import IPython
 
+# Change Working Directory
+c.NotebookApp.notebook_dir="./Docs"
+
 # Create blank config files
 os.system('ipython profile create')
 ipython_path = IPython.paths.locate_profile(profile='default')
