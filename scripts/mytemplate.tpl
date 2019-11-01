@@ -10,9 +10,14 @@
 </p>
 
 <p><!-- Remove indentations for output text and add div classes  -->
-  {% block output %}
-{{ super().strip() }}
-  {% endblock output %}
+  {% block codecell %}
+{{super().strip()}}
+  {% endblock codecell %}
+</p>
+
+<p><!-- Remove indentations for output text and add div classes  -->
+{% block output %}{{super().strip()}}
+{% endblock output %}
 </p>
 
 <p>{% block traceback_line  %}
