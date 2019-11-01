@@ -1,13 +1,5 @@
+  
 # Introduction
-
-> $$\displaystyle5$$  
-> $$\displaystyle9$$
-
-**Out:**  
-$ TEST  
-$ Something else
-
-
 
 ## In this tutorial, we will learn how to set up a Python Dev Process.
 
@@ -21,7 +13,8 @@ expr
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-$$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$
+**Out:**<br>
+$$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$<br><br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -32,7 +25,8 @@ integ.doit()
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-$$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
+**Out:**<br>
+$$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$<br><br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -45,8 +39,9 @@ a
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-$$\displaystyle5$$  
-$$\displaystyle9$$
+**Out:**<br>
+$$\displaystyle5$$<br>
+$$\displaystyle9$$<br><br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -57,8 +52,9 @@ print("okay")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-> '/Users/phuocdo/.ipython/profile\_default/startup'  
-> okay
+**Out:**<br>
+'/Users/phuocdo/.ipython/profile_default/startup'<br>
+okay<br><br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -69,12 +65,6 @@ print("yes")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-> ### Out:
->
-> sympy.printing.latex.LatexPrinter  
->  yes  
->
->
-> Yeahhhh  
-> oka
-
+**Out:**<br>
+sympy.printing.latex.LatexPrinter<br>
+yes<br><br>
