@@ -39,8 +39,8 @@ x
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-$$\displaystyle5$$
-$$\displaystyle9$$
+$$\displaystyle5$$<br>
+$$\displaystyle9$$<br>
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
