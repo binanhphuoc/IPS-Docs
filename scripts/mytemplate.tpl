@@ -1,18 +1,19 @@
   {% extends 'markdown.tpl' %}</p>
 <p><!-- Add Div for input area -->
-  {% block input %}
+{% block input %}
 {{'{% code-tabs %}
 {% code-tabs-item title="In:" %}'}}
 {{ super().strip() }}
 {{'{% endcode-tabs-item %}
 {% endcode-tabs %}'}}
-  {% endblock input %}
+
+{% endblock input %}
 </p>
 
 <p><!-- Remove indentations for output text and add div classes  -->
-  {% block codecell %}
+{% block codecell %}
 {{super().strip()}}
-  {% endblock codecell %}
+{% endblock codecell %}
 </p>
 
 <p><!-- Remove indentations for output text and add div classes  -->
