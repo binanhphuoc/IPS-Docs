@@ -18,7 +18,7 @@
 
 <p><!-- Remove indentations for output text and add div classes  -->
 {% block outputs %}**Out:**<br>
-{{super().strip()}}<br>
+{{super().strip()}}
 {% endblock outputs %}
 </p>
 
