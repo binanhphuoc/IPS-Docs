@@ -36,5 +36,5 @@ do
     output=$(dirname $output)
     echo $output
     # Convert files to folder $output
-    pipenv run jupyter nbconvert --output-dir=$output --to markdown --template ./scripts/mytemplate.tpl $f
+    pipenv run jupyter nbconvert --output-dir=$output --to markdown --template ../scripts/mytemplate.tpl $f
 done
