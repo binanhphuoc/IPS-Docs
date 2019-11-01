@@ -36,9 +36,9 @@ a
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-$$\displaystyle5$$
-
-$$\displaystyle9$$
+$$\displaystyle5$$  
+ $$a = b$$  
+$$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -49,9 +49,10 @@ print("okay")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
- '/Users/phuocdo/.ipython/profile\_default/startup'
-
- okay
+ '/Users/phuocdo/.ipython/profile\_default/startup'  
+okay  
+ $$a = b$$   
+Yes styling
 
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
@@ -62,7 +63,10 @@ print("yes")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
- sympy.prin $$a = b$$ ting.latex.LatexPrinter
+`Okay test  
+Yayyyyyyy`
 
- yes
+ `yes`
+
+&lt;div&gt;Hello&lt;/div&gt;
 
