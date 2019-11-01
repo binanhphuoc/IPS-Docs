@@ -1,3 +1,4 @@
+  
 # Introduction
 
 ## In this tutorial, we will learn how to set up a Python Dev Process.
@@ -11,9 +12,8 @@ expr
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
-$$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$
-
+  $$\displaystyle\frac{\left(x^{4} + x^{2} e^{x} - x^{2} - 2 x e^{x} - 2 x - e^{x}\right) e^{x}}{\left(x - 1\right)^{2} \left(x + 1\right)^{2} \left(e^{x} + 1\right)}$$
+  
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -22,9 +22,8 @@ integ.doit()
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
-$$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
-
+  $$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
+  
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -35,11 +34,9 @@ a
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
-$$\displaystyle5$$  
- $$a = b$$  
-$$\displaystyle\log{\left(e^{x} + 1 \right)} + \frac{e^{x}}{x^{2} - 1}$$
-
+  $$\displaystyle5$$
+$$\displaystyle9$$
+  
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -48,12 +45,9 @@ print("okay")
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
- '/Users/phuocdo/.ipython/profile\_default/startup'  
-okay  
- $$a = b$$   
-Yes styling
-
+  '/Users/phuocdo/.ipython/profile_default/startup'
+okay
+  
 {% code-tabs %}
 {% code-tabs-item title="In:" %}
 ```python
@@ -62,11 +56,6 @@ print("yes")
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
-
-`Okay test  
-Yayyyyyyy`
-
- `yes`
-
-&lt;div&gt;Hello&lt;/div&gt;
-
+  sympy.printing.latex.LatexPrinter
+yes
+  
