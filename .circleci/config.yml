@@ -122,7 +122,7 @@ jobs:
       - run:
           name: Convert ipynb to Markdown in a production folder
           command: |
-            cd ~/repo
+            cd ~/repo/Docs
             bash ~/tmp/scripts/convert-ipynb-to-md.sh -o ~/production
       
       - run:
@@ -130,8 +130,8 @@ jobs:
           command: |
             cd ~/repo
             cp -r ./.circleci ~/production
-            cp -r ./assets ~/production
-            cp -r ./SUMMARY.md ~/production
+            cp -r ./Docs/assets ~/production
+            cp -r ./Docs/SUMMARY.md ~/production
             cp -r ./.gitignore ~/production
 
       - run:
