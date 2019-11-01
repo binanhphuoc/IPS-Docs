@@ -3,7 +3,7 @@
   {% block input %}
 {{'{% code-tabs %}
 {% code-tabs-item title="In:" %}'}}
-{{ super() }}
+{{ super().strip() }}
 {{'{% endcode-tabs-item %}
 {% endcode-tabs %}'}}
   {% endblock input %}
@@ -11,13 +11,7 @@
 
 <p><!-- Remove indentations for output text and add div classes  -->
   {% block output %}
-  {% if 'text/latex' not in output.data %}
-<p>
-{{ super() }}
-</p>
-  {% else %}
-{{ super() }}
-  {% endif %}
+{{ super().strip() }}
   {% endblock output %}
 </p>
 
