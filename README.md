@@ -63,7 +63,7 @@ print("yes")
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-<div style="color:red">Out:</div>
+##### Out:
 > sympy.printing.latex.LatexPrinter<br>
 > yes<br>
 
