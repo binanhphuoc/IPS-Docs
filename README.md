@@ -47,6 +47,7 @@ print("okay")
 {% endcode-tabs %}
 
   '/Users/phuocdo/.ipython/profile_default/startup'
+  
 okay
   
 {% code-tabs %}
