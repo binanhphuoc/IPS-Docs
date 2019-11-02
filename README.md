@@ -68,3 +68,11 @@ print("yes")
 **Out:**<br>
 sympy.printing.latex.LatexPrinter<br>
 yes<br>
+
+{% code-tabs %}
+{% code-tabs-item title="In:" %}
+```python
+
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
