@@ -1,8 +1,9 @@
 import os
 import IPython
 
+ROOT_DIR = os.popen('pipenv --where').read().strip()
 # Change Working Directory
-c.NotebookApp.notebook_dir="./Docs"
+c.NotebookApp.notebook_dir = os.path.normpath(os.path.join(ROOT_DIR,"./Docs"))
 
 # Create blank config files
 os.system('ipython profile create')
@@ -16,7 +17,7 @@ if f.mode == "r":
 
 # To put ./startup.py into the InteractiveShell's list of startup files
 # Edit contents of ipython_config.py as follows:
-startup_fullpath = os.path.normpath(os.path.join(os.getcwd(),'./scripts/startup.py'))
+startup_fullpath = os.path.normpath(os.path.join(ROOT_DIR,'./scripts/startup.py'))
 configText = "\n\
 if c.InteractiveShellApp.exec_files:\n\
     c.InteractiveShellApp.exec_files.append('{:s}')\n\
